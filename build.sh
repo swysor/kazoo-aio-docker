@@ -7,4 +7,7 @@ if [ -z "$version" ]; then
   version="latest"
 fi
 
-docker build -f Dockerfile -t 2600hz/kazoo-aio:$version .
+docker build \
+    -f Dockerfile \
+    --add-host kazoo-aio.test.com:127.0.0.1 \
+    -t 2600hz/kazoo-aio:$version .

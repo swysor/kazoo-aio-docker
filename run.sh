@@ -10,13 +10,13 @@ fi
 docker stop kazoo-aio
 docker rm -f kazoo-aio
 
-docker network create private
-docker network create public
 
 mkdir /var/lib/docker-mounts/kazoo-aio
 
 docker run -d \
    --name kazoo-aio \
+   --network host \
+   --add-host kazoo-aio.test.com:127.0.0.1 \
    --volume=/var/lib/docker-mounts/kazoo-aio:/srv/db \
    --hostname kazoo-aio.test.com \
    --privileged \
