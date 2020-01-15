@@ -23,10 +23,15 @@ RUN systemctl enable rsyslog \
     kazoo-freeswitch \
     kazoo-rabbitmq
 
+RUN mkdir -p /etc/kazoo/certs
+
 COPY files/monster-ui.conf /etc/nginx/conf.d/50_monster-ui.conf
 COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/local.cfg /etc/kazoo/kamailio/local.cfg
 COPY files/tls.cfg /etc/kazoo/kamailio/tls.cfg
 COPY files/haproxy.cfg /etc/kazoo/haproxy/haproxy.cfg
+COPY files/{HOSTNAME}.pem /etc/kazoo/certs/{HOSTNAME}.pem
+COPY files/{HOSTNAME}key.pem /etc/kazoo/certs/{HOSTNAME}.key.pem
+COPY files/{HOSTNAME}.cert.pem /etc/kazoo/certs/{HOSTNAME}.cert.pem
 
 CMD ["/usr/sbin/init"]
