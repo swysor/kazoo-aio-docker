@@ -23,7 +23,8 @@ RUN systemctl enable rsyslog \
     kazoo-freeswitch \
     kazoo-rabbitmq
 
-COPY files/nginx.conf /etc/nginx/conf.d/50_monster-ui.conf
+COPY files/monster-ui.conf /etc/nginx/conf.d/50_monster-ui.conf
+COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/local.cfg /etc/kazoo/kamailio/local.cfg
 #COPY files/hosts /etc/hosts
 
