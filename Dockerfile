@@ -31,7 +31,7 @@ COPY files/local.cfg /etc/kazoo/kamailio/local.cfg
 COPY files/tls.cfg /etc/kazoo/kamailio/tls.cfg
 COPY files/haproxy.cfg /etc/kazoo/haproxy/haproxy.cfg
 COPY files/{HOSTNAME}.pem /etc/kazoo/certs/{HOSTNAME}.pem
-COPY files/{HOSTNAME}key.pem /etc/kazoo/certs/{HOSTNAME}.key.pem
+COPY files/{HOSTNAME}.key.pem /etc/kazoo/certs/{HOSTNAME}.key.pem
 COPY files/{HOSTNAME}.cert.pem /etc/kazoo/certs/{HOSTNAME}.cert.pem
 
 CMD ["/usr/sbin/init"]
