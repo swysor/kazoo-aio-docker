@@ -12,7 +12,7 @@ fi
 
 HOSTNAME=$1
 HOST_IP=$2
-$PUBLIC_IP=$3
+PUBLIC_IP=$3
 
 if [[ $4 == 'revert' ]]; then
     echo "Changing HOSTNAME from $HOSTNAME"
