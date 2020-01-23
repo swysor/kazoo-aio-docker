@@ -33,5 +33,6 @@ COPY files/haproxy.cfg /etc/kazoo/haproxy/haproxy.cfg
 COPY files/{HOSTNAME} /etc/kazoo/certs/{HOSTNAME}.pem
 COPY files/{HOSTNAME}.key.pem /etc/kazoo/certs/{HOSTNAME}.key.pem
 COPY files/{HOSTNAME}.cert.pem /etc/kazoo/certs/{HOSTNAME}.cert.pem
+COPY files/sipinterface_1.xml /etc/kazoo/freeswitch/sip_profiles/sipinterface_1.xml
 
 CMD ["/usr/sbin/init"]
