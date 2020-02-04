@@ -10,6 +10,8 @@ RUN yum install -y rsyslog python-pip nano vim psmisc which net-tools sysvinit-t
 
 RUN yum install -y nginx
 
+RUN systemctl disable kamailio freeswitch bigcouch haproxy rabbitmq-server
+
 RUN echo "systemctl enabling stuff"
 
 RUN systemctl enable rsyslog \
