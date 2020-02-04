@@ -11,7 +11,7 @@ docker stop kazoo-aio
 docker rm -f kazoo-aio
 
 
-mkdir /var/lib/docker-mounts/kazoo-data
+mkdir -p /var/lib/docker-mounts/kazoo-data
 
 docker run -d \
    --name kazoo-aio \
